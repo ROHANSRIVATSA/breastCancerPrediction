@@ -2,7 +2,6 @@
 
 [![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
 [![Build](https://img.shields.io/github/actions/workflow/status/ROHANSRIVATSA/breastCancerPrediction/docker-build.yml?branch=main)](https://github.com/ROHANSRIVATSA/breastCancerPrediction/actions)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![GCP Cloud Run](https://img.shields.io/badge/GCP-Cloud%20Run-orange.svg)](https://console.cloud.google.com/run)
 
 **A fully functional ML and MLOps pipeline for Breast Cancer prediction, deployed as a FastAPI API with Docker and Cloud Run integration.**
