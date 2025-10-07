@@ -79,13 +79,12 @@ Steps:
 3. Deploy to Cloud Run (unauthenticated for testing).
 4. Test endpoint with Postman or curl.
 
-Challenges & Resolutions
-Issue	Cause	Resolution
-LogisticRegression convergence	Features not scaled, max_iter too low	StandardScaler + max_iter=5000
-Sample input prediction mismatch	Input not scaled	Applied same scaler
-MLflow registry error	Model not properly registered	Persisted model locally with joblib
-FastAPI FileNotFoundError	Wrong model/scaler path	Moved files to /app folder
-Docker port conflict	Port already in use	Identify process → free port → rerun
+Challenges & Resolutions                              Issue	Cause	                                  Resolution
+LogisticRegression convergence	         Features not scaled, max_iter too low	         StandardScaler + max_iter=5000
+Sample input prediction mismatch	         Input not scaled	                              Applied same scaler
+MLflow registry error	                  Model not properly registered	                  Persisted model locally with joblib
+FastAPI FileNotFoundError	               Wrong model/scaler path	                        Moved files to /app folder
+Docker port conflict	                     Port already in use	                           Identify process → free port → rerun
 
 Future Work
 * Container orchestration with Kubernetes for scaling
