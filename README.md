@@ -7,10 +7,8 @@
 
 **A fully functional ML and MLOps pipeline for Breast Cancer prediction, deployed as a FastAPI API with Docker and Cloud Run integration.**
 
-Breast Cancer Classifier
-A fully functional ML and MLOps pipeline for Breast Cancer prediction, deployed as a FastAPI API with Docker and Cloud Run integration.
-
 Project Overview
+
 This project demonstrates the end-to-end workflow for building, deploying, and scaling a machine learning model for Breast Cancer classification. It integrates data preprocessing, ML model training, experiment tracking, API deployment, and cloud deployment.
 The pipeline is designed for:
 * Reproducible experiments
@@ -18,7 +16,8 @@ The pipeline is designed for:
 * Zero local infrastructure dependency
 
 Dataset
-* Source: sklearn.datasets.load_breast_cancer()
+* Source: Breast Cancer Wisconsin (Diagnostic) Data
+* sklearn.datasets.load_breast_cancer()
 * Features: 30 numerical features describing cell nuclei characteristics.
 * Target: 0 = Malignant, 1 = Benign
 Preprocessing:
@@ -78,13 +77,6 @@ Steps:
 2. Push image to GCP Artifact Registry.
 3. Deploy to Cloud Run (unauthenticated for testing).
 4. Test endpoint with Postman or curl.
-
-Challenges & Resolutions                              Issue	Cause	                                  Resolution
-LogisticRegression convergence	         Features not scaled, max_iter too low	         StandardScaler + max_iter=5000
-Sample input prediction mismatch	         Input not scaled	                              Applied same scaler
-MLflow registry error	                  Model not properly registered	                  Persisted model locally with joblib
-FastAPI FileNotFoundError	               Wrong model/scaler path	                        Moved files to /app folder
-Docker port conflict	                     Port already in use	                           Identify process → free port → rerun
 
 Future Work
 * Container orchestration with Kubernetes for scaling
