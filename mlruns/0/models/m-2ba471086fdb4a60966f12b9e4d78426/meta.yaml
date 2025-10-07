@@ -1,0 +1,10 @@
+artifact_location: file:///Users/rohan/Desktop/EAI/mlruns/0/models/m-2ba471086fdb4a60966f12b9e4d78426/artifacts
+creation_timestamp: 1759766648874
+experiment_id: '0'
+last_updated_timestamp: 1759766652382
+model_id: m-2ba471086fdb4a60966f12b9e4d78426
+model_type: null
+name: model
+source_run_id: baacb7a87fe34700bf590b446a040a68
+status: 2
+status_message: null

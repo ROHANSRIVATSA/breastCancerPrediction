@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/rohan/Desktop/EAI/mlruns/0/86889405c36f4319b4ec41b104126c0b/artifacts
+end_time: 1759766365822
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 86889405c36f4319b4ec41b104126c0b
+run_name: industrious-goat-856
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759766358702
+status: 3
+tags: []
+user_id: rohan

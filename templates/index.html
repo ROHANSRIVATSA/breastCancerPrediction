@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f9fb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #2d3748;
+        }
+        form {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 600px;
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 16px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 8px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #3182ce;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 4px;
+        }
+        button:hover {
+            background-color: #2b6cb0;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .examples {
+            margin-bottom: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Breast Cancer Classifier</h1>
+    <form id="predict-form">
+        <div class="examples">
+            <label>Examples (click to autofill):</label><br>
+            <button type="button" onclick="document.getElementById('features').value='{{ benign_example }}'">
+                Benign Example
+            </button>
+            <button type="button" onclick="document.getElementById('features').value='{{ malignant_example }}'">
+                Malignant Example
+            </button>
+        </div>
+        <label>Enter 30 comma-separated feature values:</label><br>
+        <textarea id="features" placeholder="13.54,14.36,87.46,566.3,..."></textarea><br>
+        <button type="submit">Predict</button>
+    </form>
+    <div class="result" id="result"></div>
+
+    <script>
+        document.getElementById("predict-form").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const featuresText = document.getElementById("features").value.trim();
+            if (!featuresText) {
+                alert("Please enter features!");
+                return;
+            }
+
+            const features = featuresText.split(",").map(Number);
+            const response = await fetch("/predict", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ features })
+            });
+
+            const result = await response.json();
+            document.getElementById("result").innerText = "Prediction: " + result.prediction;
+        });
+    </script>
+
+    <p style="margin-top: 12px; font-size: 12px; color: #555;">
+        Dataset source: <a href="https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data" target="_blank">Breast Cancer Wisconsin (Diagnostic) Data</a>
+    </p>
+</body>
+</html>

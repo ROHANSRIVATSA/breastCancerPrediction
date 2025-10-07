@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/rohan/Desktop/EAI/mlruns/0/56d1760ee9dc4c6ba7dd8202ce429cab/artifacts
+end_time: 1759766370906
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 56d1760ee9dc4c6ba7dd8202ce429cab
+run_name: Breast_Cancer_Logistic_Model
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759766365825
+status: 3
+tags: []
+user_id: rohan
